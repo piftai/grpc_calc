@@ -4,15 +4,42 @@ option go_package = "github.com/piftai/grpc_calc/pb";
 
 package calc;
 
+// Сервис, позволяющий выбрать метод, отправить два письма и получить ответ, в зависимости от операции.
 service Calculator {
     rpc Add(AddRequest) returns (AddResponse);
+    rpc Subtract(SubtractRequest) returns (SubtractResponse);
 }
 
+// Сигнатура входного параметра для gRPC метода Add.
 message AddRequest {
     int32 a = 1;
     int32 b = 2;
 }
 
+// Сигнатура ответа для gRPC метода Add.
 message AddResponse {
     int32 result = 1;
+}
+
+// Сигнатура входного параметра для gRPC метода Subtract.
+message SubtractRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+// Сигнатура ответа для gRPC метода Subtract.
+message SubtractResponse {
+    int32 result = 1;
+}
+
+// В текущей реализации есть существенный недостаток - дублирование сущностей по сути одинаковых. Request/Response достаточно.
+// Вот и реализация более общих сущностей. Request/Response для всех видов операций, но в учебных целях пользоваться ими пока НЕ буду.
+message BinaryOperationRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message BinaryOperationResponse {
+    int32 a = 1;
+    int32 b = 2;
 }
