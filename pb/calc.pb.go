@@ -219,6 +219,7 @@ func (x *SubtractResponse) GetResult() int32 {
 
 // В текущей реализации есть существенный недостаток - дублирование сущностей по сути одинаковых. Request/Response достаточно.
 // Вот и реализация более общих сущностей. Request/Response для всех видов операций, но в учебных целях пользоваться ими пока НЕ буду.
+// upd: хотя тогда хз как писать имплементацию этих методов на сервере. Возможно этот вариант хуже, так как надо придумывтаь еще какой-то хедер.
 type BinaryOperationRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	A             int32                  `protobuf:"varint,1,opt,name=a,proto3" json:"a,omitempty"`
