@@ -27,4 +27,11 @@ func main() {
 	}
 
 	log.Printf("Addition Result: %d", res.GetResult())
+
+	res1, err := c.Subtract(ctx, &pb.SubtractRequest{A: 5, B: 10})
+	if err != nil {
+		log.Fatalf("Could not subtract:%v", err)
+	}
+
+	log.Printf("Subtraction result: %v", res1.Result)
 }

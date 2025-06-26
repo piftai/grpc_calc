@@ -18,6 +18,11 @@ func (s *server) Add(ctx context.Context, req *pb.AddRequest) (*pb.AddResponse, 
 	return &pb.AddResponse{Result: result}, nil
 }
 
+func (s *server) Subtract(ctx context.Context, req *pb.SubtractRequest) (*pb.SubtractResponse, error) {
+	result := req.A - req.B
+	return &pb.SubtractResponse{Result: result}, nil
+}
+
 func main() {
 	lis, err := net.Listen("tcp", ":50051")
 	if err != nil {
