@@ -21,6 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// Сигнатура входного параметра для gRPC метода Add.
 type AddRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	A             int32                  `protobuf:"varint,1,opt,name=a,proto3" json:"a,omitempty"`
@@ -73,6 +74,7 @@ func (x *AddRequest) GetB() int32 {
 	return 0
 }
 
+// Сигнатура ответа для gRPC метода Add.
 type AddResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Result        int32                  `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
@@ -117,6 +119,210 @@ func (x *AddResponse) GetResult() int32 {
 	return 0
 }
 
+// Сигнатура входного параметра для gRPC метода Subtract.
+type SubtractRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             int32                  `protobuf:"varint,1,opt,name=a,proto3" json:"a,omitempty"`
+	B             int32                  `protobuf:"varint,2,opt,name=b,proto3" json:"b,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubtractRequest) Reset() {
+	*x = SubtractRequest{}
+	mi := &file_calc_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubtractRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubtractRequest) ProtoMessage() {}
+
+func (x *SubtractRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubtractRequest.ProtoReflect.Descriptor instead.
+func (*SubtractRequest) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *SubtractRequest) GetA() int32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *SubtractRequest) GetB() int32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
+// Сигнатура ответа для gRPC метода Subtract.
+type SubtractResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        int32                  `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubtractResponse) Reset() {
+	*x = SubtractResponse{}
+	mi := &file_calc_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubtractResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubtractResponse) ProtoMessage() {}
+
+func (x *SubtractResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubtractResponse.ProtoReflect.Descriptor instead.
+func (*SubtractResponse) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *SubtractResponse) GetResult() int32 {
+	if x != nil {
+		return x.Result
+	}
+	return 0
+}
+
+// В текущей реализации есть существенный недостаток - дублирование сущностей по сути одинаковых. Request/Response достаточно.
+// Вот и реализация более общих сущностей. Request/Response для всех видов операций, но в учебных целях пользоваться ими пока НЕ буду.
+type BinaryOperationRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             int32                  `protobuf:"varint,1,opt,name=a,proto3" json:"a,omitempty"`
+	B             int32                  `protobuf:"varint,2,opt,name=b,proto3" json:"b,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *BinaryOperationRequest) Reset() {
+	*x = BinaryOperationRequest{}
+	mi := &file_calc_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BinaryOperationRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BinaryOperationRequest) ProtoMessage() {}
+
+func (x *BinaryOperationRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BinaryOperationRequest.ProtoReflect.Descriptor instead.
+func (*BinaryOperationRequest) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *BinaryOperationRequest) GetA() int32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *BinaryOperationRequest) GetB() int32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
+type BinaryOperationResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             int32                  `protobuf:"varint,1,opt,name=a,proto3" json:"a,omitempty"`
+	B             int32                  `protobuf:"varint,2,opt,name=b,proto3" json:"b,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *BinaryOperationResponse) Reset() {
+	*x = BinaryOperationResponse{}
+	mi := &file_calc_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *BinaryOperationResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*BinaryOperationResponse) ProtoMessage() {}
+
+func (x *BinaryOperationResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use BinaryOperationResponse.ProtoReflect.Descriptor instead.
+func (*BinaryOperationResponse) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *BinaryOperationResponse) GetA() int32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *BinaryOperationResponse) GetB() int32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
 var File_calc_proto protoreflect.FileDescriptor
 
 const file_calc_proto_rawDesc = "" +
@@ -128,10 +334,22 @@ const file_calc_proto_rawDesc = "" +
 	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
 	"\x01b\x18\x02 \x01(\x05R\x01b\"%\n" +
 	"\vAddResponse\x12\x16\n" +
-	"\x06result\x18\x01 \x01(\x05R\x06result28\n" +
+	"\x06result\x18\x01 \x01(\x05R\x06result\"-\n" +
+	"\x0fSubtractRequest\x12\f\n" +
+	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
+	"\x01b\x18\x02 \x01(\x05R\x01b\"*\n" +
+	"\x10SubtractResponse\x12\x16\n" +
+	"\x06result\x18\x01 \x01(\x05R\x06result\"4\n" +
+	"\x16BinaryOperationRequest\x12\f\n" +
+	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
+	"\x01b\x18\x02 \x01(\x05R\x01b\"5\n" +
+	"\x17BinaryOperationResponse\x12\f\n" +
+	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
+	"\x01b\x18\x02 \x01(\x05R\x01b2s\n" +
 	"\n" +
 	"Calculator\x12*\n" +
-	"\x03Add\x12\x10.calc.AddRequest\x1a\x11.calc.AddResponseB Z\x1egithub.com/piftai/grpc_calc/pbb\x06proto3"
+	"\x03Add\x12\x10.calc.AddRequest\x1a\x11.calc.AddResponse\x129\n" +
+	"\bSubtract\x12\x15.calc.SubtractRequest\x1a\x16.calc.SubtractResponseB Z\x1egithub.com/piftai/grpc_calc/pbb\x06proto3"
 
 var (
 	file_calc_proto_rawDescOnce sync.Once
@@ -145,16 +363,22 @@ func file_calc_proto_rawDescGZIP() []byte {
 	return file_calc_proto_rawDescData
 }
 
-var file_calc_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_calc_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_calc_proto_goTypes = []any{
-	(*AddRequest)(nil),  // 0: calc.AddRequest
-	(*AddResponse)(nil), // 1: calc.AddResponse
+	(*AddRequest)(nil),              // 0: calc.AddRequest
+	(*AddResponse)(nil),             // 1: calc.AddResponse
+	(*SubtractRequest)(nil),         // 2: calc.SubtractRequest
+	(*SubtractResponse)(nil),        // 3: calc.SubtractResponse
+	(*BinaryOperationRequest)(nil),  // 4: calc.BinaryOperationRequest
+	(*BinaryOperationResponse)(nil), // 5: calc.BinaryOperationResponse
 }
 var file_calc_proto_depIdxs = []int32{
 	0, // 0: calc.Calculator.Add:input_type -> calc.AddRequest
-	1, // 1: calc.Calculator.Add:output_type -> calc.AddResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: calc.Calculator.Subtract:input_type -> calc.SubtractRequest
+	1, // 2: calc.Calculator.Add:output_type -> calc.AddResponse
+	3, // 3: calc.Calculator.Subtract:output_type -> calc.SubtractResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -171,7 +395,7 @@ func file_calc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_calc_proto_rawDesc), len(file_calc_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
