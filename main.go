@@ -23,6 +23,16 @@ func (s *server) Subtract(ctx context.Context, req *pb.SubtractRequest) (*pb.Sub
 	return &pb.SubtractResponse{Result: result}, nil
 }
 
+func (s *server) Multiple(ctx context.Context, req *pb.MultipleRequest) (*pb.MultipleResponse, error) {
+	result := req.A * req.B
+	return &pb.MultipleResponse{Result: result}, nil
+}
+
+func (s *server) Division(ctx context.Context, req *pb.DivisionRequest) (*pb.DivisionResponse, error) {
+	result := req.A / req.B
+	return &pb.DivisionResponse{Result: result}, nil
+}
+
 func main() {
 	lis, err := net.Listen("tcp", ":50051")
 	if err != nil {

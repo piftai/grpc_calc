@@ -217,6 +217,198 @@ func (x *SubtractResponse) GetResult() int32 {
 	return 0
 }
 
+type MultipleRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             int32                  `protobuf:"varint,1,opt,name=a,proto3" json:"a,omitempty"`
+	B             int32                  `protobuf:"varint,2,opt,name=b,proto3" json:"b,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MultipleRequest) Reset() {
+	*x = MultipleRequest{}
+	mi := &file_calc_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MultipleRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MultipleRequest) ProtoMessage() {}
+
+func (x *MultipleRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MultipleRequest.ProtoReflect.Descriptor instead.
+func (*MultipleRequest) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *MultipleRequest) GetA() int32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *MultipleRequest) GetB() int32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
+type MultipleResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        int32                  `protobuf:"varint,1,opt,name=result,proto3" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *MultipleResponse) Reset() {
+	*x = MultipleResponse{}
+	mi := &file_calc_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *MultipleResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MultipleResponse) ProtoMessage() {}
+
+func (x *MultipleResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MultipleResponse.ProtoReflect.Descriptor instead.
+func (*MultipleResponse) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *MultipleResponse) GetResult() int32 {
+	if x != nil {
+		return x.Result
+	}
+	return 0
+}
+
+type DivisionRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	A             float32                `protobuf:"fixed32,1,opt,name=a,proto3" json:"a,omitempty"`
+	B             float32                `protobuf:"fixed32,2,opt,name=b,proto3" json:"b,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DivisionRequest) Reset() {
+	*x = DivisionRequest{}
+	mi := &file_calc_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DivisionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DivisionRequest) ProtoMessage() {}
+
+func (x *DivisionRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DivisionRequest.ProtoReflect.Descriptor instead.
+func (*DivisionRequest) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DivisionRequest) GetA() float32 {
+	if x != nil {
+		return x.A
+	}
+	return 0
+}
+
+func (x *DivisionRequest) GetB() float32 {
+	if x != nil {
+		return x.B
+	}
+	return 0
+}
+
+type DivisionResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Result        float32                `protobuf:"fixed32,1,opt,name=result,proto3" json:"result,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DivisionResponse) Reset() {
+	*x = DivisionResponse{}
+	mi := &file_calc_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DivisionResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DivisionResponse) ProtoMessage() {}
+
+func (x *DivisionResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_calc_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DivisionResponse.ProtoReflect.Descriptor instead.
+func (*DivisionResponse) Descriptor() ([]byte, []int) {
+	return file_calc_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *DivisionResponse) GetResult() float32 {
+	if x != nil {
+		return x.Result
+	}
+	return 0
+}
+
 // В текущей реализации есть существенный недостаток - дублирование сущностей по сути одинаковых. Request/Response достаточно.
 // Вот и реализация более общих сущностей. Request/Response для всех видов операций, но в учебных целях пользоваться ими пока НЕ буду.
 // upd: хотя тогда хз как писать имплементацию этих методов на сервере. Возможно этот вариант хуже, так как надо придумывтаь еще какой-то хедер.
@@ -230,7 +422,7 @@ type BinaryOperationRequest struct {
 
 func (x *BinaryOperationRequest) Reset() {
 	*x = BinaryOperationRequest{}
-	mi := &file_calc_proto_msgTypes[4]
+	mi := &file_calc_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -242,7 +434,7 @@ func (x *BinaryOperationRequest) String() string {
 func (*BinaryOperationRequest) ProtoMessage() {}
 
 func (x *BinaryOperationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_calc_proto_msgTypes[4]
+	mi := &file_calc_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -255,7 +447,7 @@ func (x *BinaryOperationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BinaryOperationRequest.ProtoReflect.Descriptor instead.
 func (*BinaryOperationRequest) Descriptor() ([]byte, []int) {
-	return file_calc_proto_rawDescGZIP(), []int{4}
+	return file_calc_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *BinaryOperationRequest) GetA() int32 {
@@ -282,7 +474,7 @@ type BinaryOperationResponse struct {
 
 func (x *BinaryOperationResponse) Reset() {
 	*x = BinaryOperationResponse{}
-	mi := &file_calc_proto_msgTypes[5]
+	mi := &file_calc_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -294,7 +486,7 @@ func (x *BinaryOperationResponse) String() string {
 func (*BinaryOperationResponse) ProtoMessage() {}
 
 func (x *BinaryOperationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_calc_proto_msgTypes[5]
+	mi := &file_calc_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -307,7 +499,7 @@ func (x *BinaryOperationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use BinaryOperationResponse.ProtoReflect.Descriptor instead.
 func (*BinaryOperationResponse) Descriptor() ([]byte, []int) {
-	return file_calc_proto_rawDescGZIP(), []int{5}
+	return file_calc_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *BinaryOperationResponse) GetA() int32 {
@@ -340,17 +532,29 @@ const file_calc_proto_rawDesc = "" +
 	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
 	"\x01b\x18\x02 \x01(\x05R\x01b\"*\n" +
 	"\x10SubtractResponse\x12\x16\n" +
-	"\x06result\x18\x01 \x01(\x05R\x06result\"4\n" +
+	"\x06result\x18\x01 \x01(\x05R\x06result\"-\n" +
+	"\x0fMultipleRequest\x12\f\n" +
+	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
+	"\x01b\x18\x02 \x01(\x05R\x01b\"*\n" +
+	"\x10MultipleResponse\x12\x16\n" +
+	"\x06result\x18\x01 \x01(\x05R\x06result\"-\n" +
+	"\x0fDivisionRequest\x12\f\n" +
+	"\x01a\x18\x01 \x01(\x02R\x01a\x12\f\n" +
+	"\x01b\x18\x02 \x01(\x02R\x01b\"*\n" +
+	"\x10DivisionResponse\x12\x16\n" +
+	"\x06result\x18\x01 \x01(\x02R\x06result\"4\n" +
 	"\x16BinaryOperationRequest\x12\f\n" +
 	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
 	"\x01b\x18\x02 \x01(\x05R\x01b\"5\n" +
 	"\x17BinaryOperationResponse\x12\f\n" +
 	"\x01a\x18\x01 \x01(\x05R\x01a\x12\f\n" +
-	"\x01b\x18\x02 \x01(\x05R\x01b2s\n" +
+	"\x01b\x18\x02 \x01(\x05R\x01b2\xe9\x01\n" +
 	"\n" +
 	"Calculator\x12*\n" +
 	"\x03Add\x12\x10.calc.AddRequest\x1a\x11.calc.AddResponse\x129\n" +
-	"\bSubtract\x12\x15.calc.SubtractRequest\x1a\x16.calc.SubtractResponseB Z\x1egithub.com/piftai/grpc_calc/pbb\x06proto3"
+	"\bSubtract\x12\x15.calc.SubtractRequest\x1a\x16.calc.SubtractResponse\x129\n" +
+	"\bMultiple\x12\x15.calc.MultipleRequest\x1a\x16.calc.MultipleResponse\x129\n" +
+	"\bDivision\x12\x15.calc.DivisionRequest\x1a\x16.calc.DivisionResponseB Z\x1egithub.com/piftai/grpc_calc/pbb\x06proto3"
 
 var (
 	file_calc_proto_rawDescOnce sync.Once
@@ -364,22 +568,30 @@ func file_calc_proto_rawDescGZIP() []byte {
 	return file_calc_proto_rawDescData
 }
 
-var file_calc_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_calc_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_calc_proto_goTypes = []any{
 	(*AddRequest)(nil),              // 0: calc.AddRequest
 	(*AddResponse)(nil),             // 1: calc.AddResponse
 	(*SubtractRequest)(nil),         // 2: calc.SubtractRequest
 	(*SubtractResponse)(nil),        // 3: calc.SubtractResponse
-	(*BinaryOperationRequest)(nil),  // 4: calc.BinaryOperationRequest
-	(*BinaryOperationResponse)(nil), // 5: calc.BinaryOperationResponse
+	(*MultipleRequest)(nil),         // 4: calc.MultipleRequest
+	(*MultipleResponse)(nil),        // 5: calc.MultipleResponse
+	(*DivisionRequest)(nil),         // 6: calc.DivisionRequest
+	(*DivisionResponse)(nil),        // 7: calc.DivisionResponse
+	(*BinaryOperationRequest)(nil),  // 8: calc.BinaryOperationRequest
+	(*BinaryOperationResponse)(nil), // 9: calc.BinaryOperationResponse
 }
 var file_calc_proto_depIdxs = []int32{
 	0, // 0: calc.Calculator.Add:input_type -> calc.AddRequest
 	2, // 1: calc.Calculator.Subtract:input_type -> calc.SubtractRequest
-	1, // 2: calc.Calculator.Add:output_type -> calc.AddResponse
-	3, // 3: calc.Calculator.Subtract:output_type -> calc.SubtractResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 2: calc.Calculator.Multiple:input_type -> calc.MultipleRequest
+	6, // 3: calc.Calculator.Division:input_type -> calc.DivisionRequest
+	1, // 4: calc.Calculator.Add:output_type -> calc.AddResponse
+	3, // 5: calc.Calculator.Subtract:output_type -> calc.SubtractResponse
+	5, // 6: calc.Calculator.Multiple:output_type -> calc.MultipleResponse
+	7, // 7: calc.Calculator.Division:output_type -> calc.DivisionResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -396,7 +608,7 @@ func file_calc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_calc_proto_rawDesc), len(file_calc_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
